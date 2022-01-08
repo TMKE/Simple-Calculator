@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:gravity="bottom">
+
+    <TextView
+        android:id="@+id/phrase_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_textview"
+        android:layout_marginStart="@dimen/margin_textview"
+        android:text=""
+        android:textAlignment="textEnd"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/result_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_textview"
+        android:layout_marginEnd="@dimen/margin_textview"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="60sp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/open_parenthesis_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="("
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/seven_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/close_parenthesis_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/close_parenthesis_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text=")"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/eight_button"
+        app:layout_constraintLeft_toRightOf="@id/open_parenthesis_button"
+        app:layout_constraintRight_toLeftOf="@+id/reset_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reset_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="r"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/nine_button"
+        app:layout_constraintLeft_toRightOf="@+id/close_parenthesis_button"
+        app:layout_constraintRight_toLeftOf="@id/divise_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/divise_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="/"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/multiply_button"
+        app:layout_constraintLeft_toRightOf="@+id/reset_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/seven_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="7"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/four_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/eight_button"
+        app:layout_constraintTop_toBottomOf="@id/open_parenthesis_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/eight_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="8"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/five_button"
+        app:layout_constraintLeft_toRightOf="@id/seven_button"
+        app:layout_constraintRight_toLeftOf="@id/nine_button"
+        app:layout_constraintTop_toBottomOf="@id/close_parenthesis_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nine_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="9"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/six_button"
+        app:layout_constraintLeft_toRightOf="@id/eight_button"
+        app:layout_constraintRight_toLeftOf="@+id/multiply_button"
+        app:layout_constraintTop_toBottomOf="@id/reset_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/multiply_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="*"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/plus_button"
+        app:layout_constraintLeft_toRightOf="@+id/nine_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divise_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/four_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="4"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/one_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/five_button"
+        app:layout_constraintTop_toBottomOf="@+id/seven_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/five_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="5"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/two_button"
+        app:layout_constraintLeft_toRightOf="@id/four_button"
+        app:layout_constraintRight_toLeftOf="@id/six_button"
+        app:layout_constraintTop_toBottomOf="@+id/eight_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/six_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="6"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/three_button"
+        app:layout_constraintLeft_toRightOf="@id/five_button"
+        app:layout_constraintRight_toLeftOf="@+id/plus_button"
+        app:layout_constraintTop_toBottomOf="@id/nine_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plus_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="+"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/minus_button"
+        app:layout_constraintLeft_toRightOf="@+id/six_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiply_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/one_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="1"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/sign_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/two_button"
+        app:layout_constraintTop_toBottomOf="@+id/four_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/two_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="2"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/zero_button"
+        app:layout_constraintLeft_toRightOf="@id/one_button"
+        app:layout_constraintRight_toLeftOf="@id/three_button"
+        app:layout_constraintTop_toBottomOf="@+id/five_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/three_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="3"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/point_button"
+        app:layout_constraintLeft_toRightOf="@id/two_button"
+        app:layout_constraintRight_toLeftOf="@+id/minus_button"
+        app:layout_constraintTop_toBottomOf="@id/six_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minus_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="-"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/result_button"
+        app:layout_constraintLeft_toRightOf="@+id/three_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plus_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sign_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="+/-"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/zero_button"
+        app:layout_constraintTop_toBottomOf="@+id/one_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/zero_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="0"
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/sign_button"
+        app:layout_constraintRight_toLeftOf="@id/point_button"
+        app:layout_constraintTop_toBottomOf="@+id/two_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/point_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="."
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/zero_button"
+        app:layout_constraintRight_toLeftOf="@+id/result_button"
+        app:layout_constraintTop_toBottomOf="@id/three_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/result_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/margin_button"
+        android:text="="
+        android:textSize="@dimen/button_text_size"
+        android:background="@drawable/circle_orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/point_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minus_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
